@@ -1,0 +1,27 @@
+
+.panel-body-login {
+    margin: auto;
+    width: 75%;
+}
+.sns {
+    margin: auto;
+    width: 75%;
+}
+.navbar-brand {
+    width: 80%;
+}
+
+
+@media screen and (min-width:600px){
+    .panel-body-login {
+        margin: auto;
+        width: 45%;
+    }
+    .sns {
+        margin: auto;
+        width: 45%;
+    }
+    .navbar-brand {
+        width: 100%;
+    }
+}

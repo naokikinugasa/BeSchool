@@ -1,0 +1,44 @@
+
+@extends('layouts.app_company')
+
+
+@section('content')
+<!-- Page Content-->
+<div class="container padding-bottom-3x mb-2">
+    <div class="row">
+        <div class="col-lg-4">
+            <aside class="user-info-wrapper">
+                {{--<div class="user-cover" style="background-image: url(img/account/user-cover-img.jpg);">--}}
+                    {{--<div class="info-label" data-toggle="tooltip" title="You currently have 290 Reward Points to spend"><i class="icon-medal"></i>290 points</div>--}}
+                {{--</div>--}}
+                <div class="user-info">
+                    <div class="user-avatar"><a class="edit-avatar" href="#"></a>
+                        @if(isset($company->avatar))
+                        <img src="{{$user->avatar}}" alt="User">
+                        @else
+                        <img src="/img/user_default.png" alt="User">
+                        @endif
+                    </div>
+                    <div class="user-data">
+                        <h4>{{$company->name}}</h4><span>{{$company->created_at}}</span>
+                        {{--TODO:タイムスタンプ、時間削除--}}
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        @yield('user_content')
+
+    </div>
+</div>
+
+    <script>
+        $j(document).ready(function() {
+            if(location.pathname.split("/")[2]) {
+                $j('a[href^="/users/' + location.pathname.split("/")[2] + '"]').addClass('active');
+            } else {
+                $j('a[href = "/users"]').addClass('active');
+            }
+        });
+    </script>
+@endsection
