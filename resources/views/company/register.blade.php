@@ -13,19 +13,6 @@
                 <div class="panel-heading">会員登録</div>
 
                 <div class="panel-body">
-                    <!-- <div class="sns">
-                        <h4 style="text-align: center;">SNSで登録</h4>
-                        <a href="/login/twitter"  class="btn btn-block btn-social btn-twitter">
-                            <span class="fa fa-twitter"></span>Log in with twitter</a>
-                        <a href="/login/facebook"  class="btn btn-block btn-social btn-facebook">
-                            <span class="fa fa-facebook"></span>Log in with facebook</a>
-                        <div class="text-center" style="color: red">
-                            @if(isset($email_error))
-                                {{$email_error}}
-                            @endif
-                        </div>
-                        <br><br><br>
-                    </div> -->
                     <h4 style="text-align: center;">メールアドレスで登録</h4>
                     <form class="form-horizontal" method="POST" action="{{ route('company.register') }}">
                         {{ csrf_field() }}

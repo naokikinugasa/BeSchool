@@ -25,10 +25,9 @@ class UploaderRequest extends FormRequest
     {
         return [
             'title'=>'required',
-            'category_id'=>'not_in: 0',
-            'place'=>'not_in: 0',
-            'price_day'=>'required | integer',
-            'thum'=>'required|image',
+            // 'category_id'=>'not_in: 0',
+            'url'=>'required',
+            'thum'=>'required|mimes:mp4,qt,x-ms-wmv,mpeg,x-msvideo',
         ];
     }
 
@@ -36,10 +35,9 @@ class UploaderRequest extends FormRequest
     {
         return [
             "required" => "必須項目です。",
-            "image" => "指定されたファイルが画像(jpg、png、bmp、gif、svg)ではありません。",
-            "category_id.not_in" => "カテゴリーが選択されていません。",
-            "place.not_in" => "場所が選択されていません。",
-            "integer" => "価格が整数ではありません。"
+            // "image" => "指定されたファイルが画像(jpg、png、bmp、gif、svg)ではありません。",TODO:動画バリデーションエラー
+            // "category_id.not_in" => "カテゴリーが選択されていません。",
+            // "integer" => "価格が整数ではありません。"
         ];
     }
 }

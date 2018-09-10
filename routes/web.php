@@ -17,9 +17,11 @@ Route::get('/', 'TopController@index')->name('home');
 
 Route::get('hello', 'HelloController@index');
 Route::get('/products/', 'ProductsController@index');
-Route::get('/products/create', 'ProductsController@create')->middleware('auth');
-Route::post('/products/create/confirm', 'ProductsController@confirm')->middleware('auth');
-Route::post('/products/', 'ProductsController@store')->middleware('auth');
+Route::group(['middleware' => 'auth:company'], function() {
+    Route::get('/products/create', 'ProductsController@create');
+    Route::post('/products/create/confirm', 'ProductsController@confirm');
+    Route::post('/products/', 'ProductsController@store');
+});
 Route::delete('/products/{id}', 'ProductsController@destroy');
 Route::get('/products/{id}', 'ProductsController@show');
 Route::post('/products/{id}', 'ProductsController@show');

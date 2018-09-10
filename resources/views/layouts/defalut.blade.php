@@ -89,85 +89,7 @@
             <li class="has-children"><span><a href="/"><span>Home</span></a></span>
             </li>
             <li class="has-children active"><span><a href="/howto"><span>使い方</span></a></span>
-                {{--<ul class="offcanvas-submenu">--}}
-                    {{--<li><a href="shop-categories.html">Shop Categories</a></li>--}}
-                    {{--<li class="active has-children"><span><a href="shop-grid-ls.html"><span>Shop Grid</span></a><span class="sub-menu-toggle"></span></span>--}}
-                        {{--<ul class="offcanvas-submenu">--}}
-                            {{--<li><a href="shop-grid-ls.html">Grid Left Sidebar</a></li>--}}
-                            {{--<li class="active"><a href="shop-grid-rs.html">Grid Right Sidebar</a></li>--}}
-                            {{--<li><a href="shop-grid-ns.html">Grid No Sidebar</a></li>--}}
-                        {{--</ul>--}}
-                    {{--</li>--}}
-                    {{--<li class="has-children"><span><a href="shop-list-ls.html"><span>Shop List</span></a><span class="sub-menu-toggle"></span></span>--}}
-                        {{--<ul class="offcanvas-submenu">--}}
-                            {{--<li><a href="shop-list-ls.html">List Left Sidebar</a></li>--}}
-                            {{--<li><a href="shop-list-rs.html">List Right Sidebar</a></li>--}}
-                            {{--<li><a href="shop-list-ns.html">List No Sidebar</a></li>--}}
-                        {{--</ul>--}}
-                    {{--</li>--}}
-                    {{--<li><a href="shop-single.html">Single Product</a></li>--}}
-                    {{--<li><a href="cart.html">Cart</a></li>--}}
-                    {{--<li><a href="checkout.html">Checkout</a></li>--}}
-                {{--</ul>--}}
-            </li>
-            {{--<li class="has-children"><span><a href="#">商品一覧</a><span class="sub-menu-toggle"></span></span>--}}
-                {{--<ul class="offcanvas-submenu">--}}
-                    {{--<li class="has-children"><span><a href="#">全て</a><span class="sub-menu-toggle"></span></span>--}}
-                        {{--<ul class="offcanvas-submenu">--}}
-                            {{--<li><a href="#">Sneakers</a></li>--}}
-                            {{--<li><a href="#">Loafers</a></li>--}}
-                            {{--<li><a href="#">Boat Shoes</a></li>--}}
-                            {{--<li><a href="#">Sandals</a></li>--}}
-                            {{--<li><a href="#">View All</a></li>--}}
-                        {{--</ul>--}}
-                    {{--</li>--}}
-                    {{--<li class="has-children"><span><a href="#">家電</a><span class="sub-menu-toggle"></span></span>--}}
-                        {{--<ul class="offcanvas-submenu">--}}
-                            {{--<li><a href="#">Sandals</a></li>--}}
-                            {{--<li><a href="#">Flats</a></li>--}}
-                            {{--<li><a href="#">Sneakers</a></li>--}}
-                            {{--<li><a href="#">Heels</a></li>--}}
-                            {{--<li><a href="#">View All</a></li>--}}
-                        {{--</ul>--}}
-                    {{--</li>--}}
-                    {{--<li class="has-children"><span><a href="#">Men's Clothing</a><span class="sub-menu-toggle"></span></span>--}}
-                        {{--<ul class="offcanvas-submenu">--}}
-                            {{--<li><a href="#">Shirts &amp; Tops</a></li>--}}
-                            {{--<li><a href="#">Pants</a></li>--}}
-                            {{--<li><a href="#">Jackets</a></li>--}}
-                            {{--<li><a href="#">View All</a></li>--}}
-                        {{--</ul>--}}
-                    {{--</li>--}}
-                    {{--<li class="has-children"><span><a href="#">Women's Clothing</a><span class="sub-menu-toggle"></span></span>--}}
-                        {{--<ul class="offcanvas-submenu">--}}
-                            {{--<li><a href="#">Dresses</a></li>--}}
-                            {{--<li><a href="#">Shirts &amp; Tops</a></li>--}}
-                            {{--<li><a href="#">Shorts</a></li>--}}
-                            {{--<li><a href="#">Swimwear</a></li>--}}
-                            {{--<li><a href="#">View All</a></li>--}}
-                        {{--</ul>--}}
-                    {{--</li>--}}
-                    {{--<li class="has-children"><span><a href="#">Bags</a><span class="sub-menu-toggle"></span></span>--}}
-                        {{--<ul class="offcanvas-submenu">--}}
-                            {{--<li><a href="#">Handbags</a></li>--}}
-                            {{--<li><a href="#">Backpacks</a></li>--}}
-                            {{--<li><a href="#">Luggage</a></li>--}}
-                            {{--<li><a href="#">Wallets</a></li>--}}
-                            {{--<li><a href="#">View All</a></li>--}}
-                        {{--</ul>--}}
-                    {{--</li>--}}
-                    {{--<li class="has-children"><span><a href="#">Accessories</a><span class="sub-menu-toggle"></span></span>--}}
-                        {{--<ul class="offcanvas-submenu">--}}
-                            {{--<li><a href="#">Sunglasses</a></li>--}}
-                            {{--<li><a href="#">Hats</a></li>--}}
-                            {{--<li><a href="#">Watches</a></li>--}}
-                            {{--<li><a href="#">Jewelry</a></li>--}}
-                            {{--<li><a href="#">Belts</a></li>--}}
-                            {{--<li><a href="#">View All</a></li>--}}
-                        {{--</ul>--}}
-                    {{--</li>--}}
-                {{--</ul>--}}
-            {{--</li>--}}
+                
             <li class="has-children"><span><a href="/products"><span>商品一覧</span></a><span class="sub-menu-toggle"></span></span>
                 <ul class="offcanvas-submenu">
                     <li><a href="/products">全て</a></li>
@@ -197,26 +119,6 @@
         </ul>
     </nav>
 </div>
-<!-- Topbar-->
-{{--<div class="topbar">--}}
-    {{--<div class="topbar-column"><a class="hidden-md-down" href="mailto:support@unishop.com"><i class="icon-mail"></i>&nbsp; support@unishop.com</a><a class="hidden-md-down" href="tel:00331697720"><i class="icon-bell"></i>&nbsp; 00 33 169 7720</a><a class="social-button sb-facebook shape-none sb-dark" href="#" target="_blank"><i class="socicon-facebook"></i></a><a class="social-button sb-twitter shape-none sb-dark" href="#" target="_blank"><i class="socicon-twitter"></i></a><a class="social-button sb-instagram shape-none sb-dark" href="#" target="_blank"><i class="socicon-instagram"></i></a><a class="social-button sb-pinterest shape-none sb-dark" href="#" target="_blank"><i class="socicon-pinterest"></i></a>--}}
-    {{--</div>--}}
-    {{--<div class="topbar-column"><a class="hidden-md-down" href="#"><i class="icon-download"></i>&nbsp; Get mobile app</a>--}}
-        {{--<div class="lang-currency-switcher-wrap">--}}
-            {{--<div class="lang-currency-switcher dropdown-toggle"><span class="language"><img alt="English" src="img/flags/GB.png"></span><span class="currency">$ USD</span></div>--}}
-            {{--<div class="dropdown-menu">--}}
-                {{--<div class="currency-select">--}}
-                    {{--<select class="form-control form-control-rounded form-control-sm">--}}
-                        {{--<option value="usd">$ USD</option>--}}
-                        {{--<option value="usd">€ EUR</option>--}}
-                        {{--<option value="usd">£ UKP</option>--}}
-                        {{--<option value="usd">¥ JPY</option>--}}
-                    {{--</select>--}}
-                {{--</div><a class="dropdown-item" href="#"><img src="img/flags/FR.png" alt="Français">Français</a><a class="dropdown-item" href="#"><img src="img/flags/DE.png" alt="Deutsch">Deutsch</a><a class="dropdown-item" href="#"><img src="img/flags/IT.png" alt="Italiano">Italiano</a>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-{{--</div>--}}
 <!-- Navbar-->
 <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
 <header class="navbar navbar-sticky">
@@ -237,63 +139,8 @@
         <ul>
             <li class="has-megamenu"><a href="/"><span>Home</span></a>
             </li>
-            <li><a href="/howto"><span>使い方</span></a>
             </li>
-            <li class="has-megamenu"><a href="/products"><span>全て</span></a>
-            </li>
-            <li class="has-megamenu"><a href="/products/category/1"><span>家電</span></a>
-                {{--<ul class="mega-menu">--}}
-                    {{--<li><span class="mega-menu-title">Top Categories</span>--}}
-                        {{--<ul class="sub-menu">--}}
-                            {{--<li><a href="#">Men's Shoes</a></li>--}}
-                            {{--<li><a href="#">Women's Shoes</a></li>--}}
-                            {{--<li><a href="#">Shirts and Tops</a></li>--}}
-                            {{--<li><a href="#">Swimwear</a></li>--}}
-                            {{--<li><a href="#">Shorts and Pants</a></li>--}}
-                            {{--<li><a href="#">Accessories</a></li>--}}
-                        {{--</ul>--}}
-                    {{--</li>--}}
-                    {{--<li><span class="mega-menu-title">Specialty Shops</span>--}}
-                        {{--<ul class="sub-menu">--}}
-                            {{--<li><a href="#">Junior's Shop</a></li>--}}
-                            {{--<li><a href="#">Swim Shop</a></li>--}}
-                            {{--<li><a href="#">Athletic Shop</a></li>--}}
-                            {{--<li><a href="#">Outdoor Shop</a></li>--}}
-                            {{--<li><a href="#">Luxury Shop</a></li>--}}
-                            {{--<li><a href="#">Accessories Shop</a></li>--}}
-                        {{--</ul>--}}
-                    {{--</li>--}}
-                    {{--<li>--}}
-                        {{--<section class="promo-box" style="background-image: url(/img/banners/02.jpg);"><span class="overlay-dark" style="opacity: .4;"></span>--}}
-                            {{--<div class="promo-box-content text-center padding-top-2x padding-bottom-2x">--}}
-                                {{--<h4 class="text-light text-thin text-shadow">New Collection of</h4>--}}
-                                {{--<h3 class="text-bold text-light text-shadow">Sunglasses</h3><a class="btn btn-sm btn-primary" href="#">Shop Now</a>--}}
-                            {{--</div>--}}
-                        {{--</section>--}}
-                    {{--</li>--}}
-                    {{--<li>--}}
-                        {{--<section class="promo-box" style="background-image: url(/img/banners/03.jpg);">--}}
-                            {{--<!-- Choose between .overlay-dark (#000) or .overlay-light (#fff) with default opacity of 50%. You can overrride default color and opacity values via 'style' attribute.--><span class="overlay-dark" style="opacity: .45;"></span>--}}
-                            {{--<div class="promo-box-content text-center padding-top-2x padding-bottom-2x">--}}
-                                {{--<h3 class="text-bold text-light text-shadow">Limited Offer</h3>--}}
-                                {{--<h4 class="text-light text-thin text-shadow">save up to 50%!</h4><a class="btn btn-sm btn-primary" href="#">Learn More</a>--}}
-                            {{--</div>--}}
-                        {{--</section>--}}
-                    {{--</li>--}}
-                {{--</ul>--}}
-            </li>
-            <li><a href="/products/category/2"><span>生活用品</span></a>
-            </li>
-            <li><a href="/products/category/3"><span>趣味</span></a>
-
-            </li>
-            <li><a href="/products/category/4"><span>スポーツ</span></a>
-
-            </li>
-            <li><a href="/products/category/5"><span>ファッション</span></a>
-
-            </li>
-            <li class="has-megamenu"><a href="/products/category/6"><span>その他</span></a>
+            <li class="has-megamenu"><a href="/products"><span>動画</span></a>
             </li>
         </ul>
     </nav>
@@ -330,27 +177,6 @@
                         </li>
                     </ul>
                     </div>
-                {{--<div class="cart"><a href="cart.html"></a><i class="icon-bag"></i><span class="count">3</span><span class="subtotal">$289.68</span>--}}
-                    {{--<div class="toolbar-dropdown">--}}
-                        {{--<div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="shop-single.html"><img src="/img/cart-dropdown/01.jpg" alt="Product"></a>--}}
-                            {{--<div class="dropdown-product-info"><a class="dropdown-product-title" href="shop-single.html">Unionbay Park</a><span class="dropdown-product-details">1 x $43.90</span></div>--}}
-                        {{--</div>--}}
-                        {{--<div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="shop-single.html"><img src="/img/cart-dropdown/02.jpg" alt="Product"></a>--}}
-                            {{--<div class="dropdown-product-info"><a class="dropdown-product-title" href="shop-single.html">Daily Fabric Cap</a><span class="dropdown-product-details">2 x $24.89</span></div>--}}
-                        {{--</div>--}}
-                        {{--<div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="shop-single.html"><img src="/img/cart-dropdown/03.jpg" alt="Product"></a>--}}
-                            {{--<div class="dropdown-product-info"><a class="dropdown-product-title" href="shop-single.html">Haan Crossbody</a><span class="dropdown-product-details">1 x $200.00</span></div>--}}
-                        {{--</div>--}}
-                        {{--<div class="toolbar-dropdown-group">--}}
-                            {{--<div class="column"><span class="text-lg">Total:</span></div>--}}
-                            {{--<div class="column text-right"><span class="text-lg text-medium">$289.68&nbsp;</span></div>--}}
-                        {{--</div>--}}
-                        {{--<div class="toolbar-dropdown-group">--}}
-                            {{--<div class="column"><a class="btn btn-sm btn-block btn-secondary" href="cart.html">View Cart</a></div>--}}
-                            {{--<div class="column"><a class="btn btn-sm btn-block btn-success" href="checkout-address.html">Checkout</a></div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
                 @else
                     <div class="account" style="display: none;">
                     </div>
@@ -372,17 +198,6 @@
             <div class="column">
                 <h1>@yield('title')</h1>
             </div>
-            {{--<div class="column">--}}
-                {{--<ul class="breadcrumbs">--}}
-                    {{--<li><a href="index.html">Home</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="separator">&nbsp;</li>--}}
-                    {{--<li><a href="account-orders.html">Account</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="separator">&nbsp;</li>--}}
-                    {{--<li>My Wishlist</li>--}}
-                {{--</ul>--}}
-            {{--</div>--}}
         </div>
     </div>
     @endif
@@ -425,20 +240,6 @@
                     </ul>
                 </section>
             </div>
-            {{--<div class="col-lg-3 col-md-6">--}}
-                {{--<!-- Account / Shipping Info-->--}}
-                {{--<section class="widget widget-links widget-light-skin">--}}
-                    {{--<h3 class="widget-title">Account &amp; Shipping Info</h3>--}}
-                    {{--<ul>--}}
-                        {{--<li><a href="#">Your Account</a></li>--}}
-                        {{--<li><a href="#">Shipping Rates & Policies</a></li>--}}
-                        {{--<li><a href="#">Refunds & Replacements</a></li>--}}
-                        {{--<li><a href="#">Taxes</a></li>--}}
-                        {{--<li><a href="#">Delivery Info</a></li>--}}
-                        {{--<li><a href="#">Affiliate Program</a></li>--}}
-                    {{--</ul>--}}
-                {{--</section>--}}
-            {{--</div>--}}
         </div>
         <hr class="hr-light mt-2 margin-bottom-2x">
         <!-- Copyright-->
@@ -447,7 +248,7 @@
 </footer>
         @if( Request::path() !== "products/create" && Request::path() !== "products/create/confirm")
         <a class="footer-sell-btn" href="{{url('products/create')}}" style="color:#fff;text-decoration: none;">
-            <div>出品</div>
+            <div>動画</div>
             <i class="icon-camera"></i>
         </a>
         @endif

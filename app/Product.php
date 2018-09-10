@@ -8,7 +8,7 @@ class Product extends Model
 {
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Company');
     }
 
     public function getOwnerName()
@@ -48,6 +48,8 @@ class Product extends Model
             return $fnamebase."jpg";
         }else if(file_exists(public_path().$fnamebase."jpeg")){
             return $fnamebase."jpeg";
+        }else if(file_exists(public_path().$fnamebase."mp4")){
+            return $fnamebase."mp4";
         }else{
             return "";
         }

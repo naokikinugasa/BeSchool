@@ -12,18 +12,6 @@
                 <div class="panel-body panel-body-login">
                         <h4 style="text-align: center;">アカウントをお持ちでない方はこちら</h4>
                         <a href="/register" class="btn btn-primary" style="width: 100%">新規会員登録</a>
-                        <hr>
-                        <!-- <h4 style="text-align: center;">SNSでログイン</h4>
-                        <a href="/login/twitter"  class="btn btn-block btn-social btn-twitter">
-                            <span class="fa fa-twitter"></span>Log in with twitter</a>
-                        <a href="/login/facebook"  class="btn btn-block btn-social btn-facebook">
-                            <span class="fa fa-facebook"></span>Log in with facebook</a>
-                        <div class="text-center" style="color: red">
-                        @if(isset($email_error))
-                            {{$email_error}}
-                        @endif
-                        <br><br><br>
-                        </div> -->
                     <h4 style="text-align: center;">メールアドレスでログイン</h4>
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}

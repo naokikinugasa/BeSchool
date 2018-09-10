@@ -36,23 +36,10 @@ class ProductsController extends Controller
         $t = $request->input('t');
 
         $user = Auth::user();
-        $calendar = new Calendar($t);
         $product = Product::findOrFail($id);
-        $reservedDates = array();
-        foreach ($product->reservated_days as $reservation) {
-            array_push($reservedDates, $reservation->date);
-        }
-
-        if ($request->has('message')) {
-            $message = New Message();
-            $message->text = $request->input('message');
-            $message->user_id = $user->id;
-            $message->product_id = $id;
-            $message->save();
-        }
 
 
-        return view('products.show', ['product' => $product, "calendar" => $calendar, 'user' => $user, 'reservedDates' => $reservedDates, 't' =>$t]);
+        return view('products.show', ['product' => $product, 'user' => $user, 't' =>$t]);
     }
 
     public function category($id)
@@ -98,12 +85,9 @@ class ProductsController extends Controller
         $data = session()->all();
         $product = new Product();
         $product->title = $data["title"];
-        $product->honbun = $data["honbun"];
+        $product->description = $data["description"];
         $product->category_id = $data["category_id"];//TODO:category数値,文字列対応
-        $product->place = $data["place"];
-        $product->price_day = $data["price_day"];
-        $product->price_week = $data["price_week"];
-        $product->price_month = $data["price_month"];
+        $product->url = $data["url"];
         $product->user_id = $user->id;
         $product->save();
 
@@ -119,13 +103,6 @@ class ProductsController extends Controller
         rename(public_path() . $req->thum, public_path() . "/img/product/" . $lastInsertedId . "/thum." .pathinfo($req->thum, PATHINFO_EXTENSION));
 
 
-        $title = '【出品完了】Shareの出品が完了しました。';
-        $text = '出品が完了しました！
-倉庫番号と鍵番号をご確認後、商品を倉庫に持って行ってください。
-置き場所は自由です。';
-        $text2 = '出品内容
-        http://www.share-rental.com/users/listing';
-        Mail::to($user->email)->send(new RentSent($title, $text, $text2));
 
         $bunsyo = '出品';
         $bunsyo2 = '倉庫に商品を置きに行きましょう！';
