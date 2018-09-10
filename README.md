@@ -1,5 +1,7 @@
 # BeSchool
 
+| ページ | URL | ファイル |
+|:-----------|:------------|:------------|
 |学生登録ページ	|register	|beschool\resources\views\auth\register.blade.php|
 |学生ログインページ	|login	|beschool\resources\views\auth\login.blade.php|
 |学生マイページ	|users	|beschool\resources\views\users\index2.blade.php|
@@ -10,4 +12,5 @@
 |企業動画投稿ページ(確認用) |products/create/confirm |beschool\resources\views\products\confirm.blade.php|
 |動画一覧ページ |products |beschool\resources\views\products\index.blade.php|
 |動画詳細ページ |products/動画ID |beschool\resources\views\products\show.blade.php|
+
 ※元々の自分のサービスを利用しているので、関係ないコードが混ざっています。
