@@ -21,34 +21,17 @@ class UsersController extends Controller
         return view("users.index", ['user' => $user]);
     }
 
-    public function renting()
+    public function edit()
     {
         $user = Auth::user();
-        $products = array();
-        $reservations = $user->reservations;
-        foreach ($reservations as $reservation) {
-            $products[$reservation->product_id] = $reservation->product;
-        }
-        return view("users.renting", compact('user', 'products', 'reservations'));
+        return view("users.edit", ['user' => $user]);
     }
 
-    public function listing()
+    public function update(Request $request)
     {
         $user = Auth::user();
-        return view("users.listing", ['user' => $user]);
-    }
-
-    public function money()
-    {
-        $user = Auth::user();
-        $reservations = array();
-        foreach ($user->products as $product) {
-            $res = Reservation::where('product_id', $product->id)->get();
-            foreach ($res as $r){
-                array_push($reservations, $r);
-            }
-        }
-
-        return view("users.money", compact('user', 'reservations'));
+        $form = $request->all();
+        $user->fill($form)->save();
+        return view("users.index2", ['user' => $user]);
     }
 }

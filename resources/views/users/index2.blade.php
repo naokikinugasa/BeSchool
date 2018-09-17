@@ -20,7 +20,7 @@
             <p>キャッチコピー：{{$user->catchphrase}}</p>
             <p>人生で一番つらかったこと：{{$user->painful}}</p>
             <p>人生で一番やりきったこと：{{$user->worked}}</p>
-            <p>将来ビジョン：{{$user->vision}}</p>
+            <p>将来のビジョン：{{$user->vision}}</p>
             <p>就職の有無：{{$user->finding}}</p>
         </div>
 @endsection

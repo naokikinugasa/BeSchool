@@ -31,12 +31,10 @@ Route::get('/products/category/{id}', 'ProductsController@category');
 Auth::routes();
 
 Route::get('/users/', 'UsersController@index')->middleware('auth');
-Route::get('/users/renting', 'UsersController@renting')->middleware('auth');
-Route::get('/users/listing', 'UsersController@listing')->middleware('auth');
-Route::get('/users/money', 'UsersController@money')->middleware('auth');
 Route::get('/users/{id}', 'UsersController@show');
+Route::get('/edit', 'UsersController@edit')->middleware('auth');
+Route::post('/edit', 'UsersController@update')->middleware('auth');
 
-Route::get('/users/edit', 'UsersController@edit')->middleware('auth');
 
 Route::get('/home', 'TopController@index')->name('home');
 Route::get('/howto', 'TopController@howto');
