@@ -138,7 +138,7 @@ class ProductsController extends Controller
 
         $form = $request->all();
         $product->fill($form)->save();
-        return view("products.show", ['product' => $product, 'user' => $user]);
+        return redirect('/products/edit/' + $id);//TODO:リダイレクト先あっているか確認
     }
 
 }
