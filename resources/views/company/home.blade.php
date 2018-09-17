@@ -8,9 +8,6 @@
     <div class="row">
         <div class="col-lg-4">
             <aside class="user-info-wrapper">
-                {{--<div class="user-cover" style="background-image: url(img/account/user-cover-img.jpg);">--}}
-                    {{--<div class="info-label" data-toggle="tooltip" title="You currently have 290 Reward Points to spend"><i class="icon-medal"></i>290 points</div>--}}
-                {{--</div>--}}
                 <div class="user-info">
                     <div class="user-avatar"><a class="edit-avatar" href="#"></a>
                         @if(isset($company->avatar))
@@ -20,7 +17,11 @@
                         @endif
                     </div>
                     <div class="user-data">
-                        <h4>{{$company->name}}</h4><span>{{$company->created_at}}</span>
+                        <h4>{{$company->name}}</h4>
+                        <h4>{{$company->email}}</h4>
+                        <h4>募集内容：{{$company->wantedcontents}}</h4>
+                        <h4>面談可能スケジュール：{{$company->schedule}}</h4>
+                        <span>{{$company->created_at}}</span>
                         {{--TODO:タイムスタンプ、時間削除--}}
                     </div>
                 </div>

@@ -21,6 +21,8 @@ Route::group(['middleware' => 'auth:company'], function() {
     Route::get('/products/create', 'ProductsController@create');
     Route::post('/products/create/confirm', 'ProductsController@confirm');
     Route::post('/products/', 'ProductsController@store');
+    Route::get('/products/edit/{id}', 'ProductsController@edit');
+    Route::post('/products/edit/{id}', 'ProductsController@update');
 });
 Route::delete('/products/{id}', 'ProductsController@destroy');
 Route::get('/products/{id}', 'ProductsController@show');
@@ -81,9 +83,10 @@ Route::group(['prefix' => 'company', 'middleware' => 'auth:company'], function()
 
 
 Route::group(['prefix' => 'company'], function() {
-    Route::get('/',         function () { return redirect('/company/home'); });
+    Route::get('/',         function () { return redirect('/company/home'); });//TODO:上からリダイレクトしてる
+    // Route::get('/', 'Company\HomeController@index');
+    Route::get('edit',    'Company\CompaniesController@edit');
+    Route::post('edit',    'Company\CompaniesController@update');
     Route::get('register',     'Company\RegisterController@showRegistrationForm')->name('company.register');
     Route::post('register',    'Company\RegisterController@register');
 });
-
-// Route::get('/companies/', 'Company\HomeController@index')->middleware('auth');

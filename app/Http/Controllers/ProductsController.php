@@ -116,4 +116,29 @@ class ProductsController extends Controller
         return redirect('/users/listing');
     }
 
+    public function edit(Request $request)
+    {
+        $user = Auth::user();
+        //article/edit/123
+        // ['article', 'edit', '123']
+        $segments = $request->segments();
+        // 123
+        $id = array_pop($segments);
+        $product = Product::find($id);
+        return view("products.edit", ['product' => $product, 'user' => $user]);
+    }
+
+    public function update(Request $request)
+    {
+        $user = Auth::user();
+
+        $segments = $request->segments();
+        $id = array_pop($segments);
+        $product = Product::find($id);
+
+        $form = $request->all();
+        $product->fill($form)->save();
+        return view("products.show", ['product' => $product, 'user' => $user]);
+    }
+
 }
