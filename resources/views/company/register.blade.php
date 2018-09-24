@@ -8,7 +8,7 @@
 
     <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8 col-md-offset-2 company_register">
             <div class="panel panel-default">
                 <div class="panel-heading">会員登録</div>
 
@@ -18,9 +18,9 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">名前</label>
+                            <label for="name" class="col-md-10 col-md-offset-1 control-label">名前</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-10 col-md-offset-1">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
 
                                 @if ($errors->has('name'))
@@ -35,9 +35,9 @@
                         
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">メールアドレス *非公開</label>
+                            <label for="email" class="col-md-10 col-md-offset-1 control-label">メールアドレス *非公開</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-10 col-md-offset-1">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
@@ -49,9 +49,9 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">パスワード *非公開</label>
+                            <label for="password" class="col-md-10 col-md-offset-1 control-label">パスワード *非公開</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-10 col-md-offset-1">
                                 <input id="password" type="password" class="form-control" name="password" required>
 
                                 @if ($errors->has('password'))
@@ -63,15 +63,15 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">パスワード (確認)</label>
+                            <label for="password-confirm" class="col-md-10 col-md-offset-1 control-label">パスワード (確認)</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-10 col-md-offset-1">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+                            <div class="col-md-6 col-md-offset-3 submit">
                                 <button type="submit" class="btn btn-primary">
                                     登録
                                 </button>

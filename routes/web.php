@@ -37,6 +37,8 @@ Route::get('/users/{id}', 'UsersController@show');
 Route::get('/edit', 'UsersController@edit')->middleware('auth');
 Route::post('/edit', 'UsersController@update')->middleware('auth');
 
+// logout
+Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('/home', 'TopController@index')->name('home');
 Route::get('/howto', 'TopController@howto');
