@@ -138,7 +138,8 @@ class ProductsController extends Controller
 
         $form = $request->all();
         $product->fill($form)->save();
-        return redirect('/products/edit/' + $id);//TODO:リダイレクト先あっているか確認
+        return redirect('/users');
+        // return redirect('/products/edit/' + $id);//TODO:リダイレクト先あっているか確認
     }
 
 }

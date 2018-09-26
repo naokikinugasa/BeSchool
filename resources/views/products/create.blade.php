@@ -101,30 +101,4 @@ $j('#file-input').change(function() {
   fr.readAsDataURL(this.files[0]);
 });
 </script>
-        {{--<input id="text" type="text" value="選択されていません" />--}}
-        {{--<input id="button" type="button" value="ファイルを開く" />--}}
-        {{--<input id="file" type="file" name="thum" style="display: none" />--}}
-{{--<script type="text/javascript">--}}
-    {{--console.log('Start');--}}
-    {{--var file = document.getElementById( 'file' );--}}
-    {{--var text = document.getElementById( 'file-input' );--}}
-    {{--console.log('file');--}}
-    {{--console.log(file);--}}
-    {{--console.log('text');--}}
-    {{--console.log(text);--}}
-    {{--// var button = document.getElementById( 'button' );--}}
-
-    {{--file.onchange = function()--}}
-    {{--{--}}
-        {{--console.log('onchange');--}}
-        {{--text.value = this.value;--}}
-    {{--}--}}
-
-    {{--text.onclick = function()--}}
-    {{--{--}}
-        {{--console.log('click');--}}
-        {{--// type="file"要素のclickイベントを発生させる--}}
-        {{--file.click();--}}
-    {{--}--}}
-{{--</script>--}}
 @endsection

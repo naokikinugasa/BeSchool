@@ -24,10 +24,10 @@ class UploaderRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=>'required',
+            'thum'=>'required',
             // 'category_id'=>'not_in: 0',
-            'url'=>'required',
-            'thum'=>'required|mimes:mp4,qt,x-ms-wmv,mpeg,x-msvideo',
+            // 'url'=>'required',
+            // 'thum'=>'required|mimes:mp4,qt,x-ms-wmv,mpeg,x-msvideo',
         ];
     }
 

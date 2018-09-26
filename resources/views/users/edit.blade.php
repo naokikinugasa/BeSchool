@@ -226,6 +226,19 @@
     </div>
 </div>
 
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label" for="file-input">動画</label>
+                        <div class="col-10">
+                            <div class="custom-file">
+                                <input class="custom-file-input" type="file" id="file-input" name="thum">
+                                <label class="custom-file-label" for="file-input">動画を選択</label>
+                            </div>
+                        </div>
+                        @if($errors->has('thum'))
+                            <p style="color: red;">EROOR {{$errors->first('thum')}}</p>
+                        @endif
+                    </div>
+
 <div class="form-group{{ $errors->has('finding') ? ' has-error' : '' }}">
     <label for="finding" class="col-md-4 control-label">就職の意思</label>
 
