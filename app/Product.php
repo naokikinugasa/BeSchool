@@ -42,7 +42,7 @@ class Product extends Model
 
     public function pic_thum()
     {
-        $fnamebase = "/img/product/".$this->id."/thum.";
+        $fnamebase = "/movie/product/".$this->id."/thum.";
 
         if(file_exists(public_path().$fnamebase."gif")){
             return $fnamebase."gif";

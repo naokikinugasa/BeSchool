@@ -5,14 +5,27 @@
             <div class="padding-top-2x mt-2 hidden-lg-up"></div>
             <p>名前：{{$user->name}}</p>
             <div class="user-avatar"><a class="edit-avatar" href="#"></a>
-                @if(isset($user->avatar))
-                <img src="{{$user->avatar}}" alt="User">
+                @if(null != $user->avatar())
+                <img src="{{$user->avatar()}}" alt="User">
                 @else
                 <img src="/img/user_default.png" alt="User">
                 @endif
             </div>
-            <form action="/edit" method="post">
-            {{ csrf_field() }}
+            <form action="/edit" method="post" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                <!-- <div class="form-group row">
+                    <label class="col-2 col-form-label" for="file-input">動画</label>
+                    <div class="col-10">
+                        <div class="custom-file">
+                            <input class="custom-file-input" type="file" id="file-input" name="avatar">
+                            <label class="custom-file-label" for="file-input">動画を選択</label>
+                        </div>
+                    </div>
+                    @if($errors->has('avatar'))
+                        <p style="color: red;">EROOR {{$errors->first('avatar')}}</p>
+                    @endif
+                </div> -->
+                <input type="file" name="avatar">
 
 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
     <label for="name" class="col-md-4 control-label">名前</label>
@@ -169,6 +182,16 @@
     </div>
 </div>
 
+<div class="form-group{{ $errors->has('skill') ? ' has-error' : '' }}">
+    <label for="skill" class="col-md-4 control-label">スキル</label>
+
+    <div class="col-md-6">
+        <input type="radio" name="skill" value="セールス" /> セールス　
+        <input type="radio" name="skill" value="マーケティング" /> マーケティング
+        <input type="radio" name="skill" value="プログラミング" /> プログラミング
+        <input type="radio" name="skill" value="デザイン" /> デザイン
+    </div>
+</div>
 
 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
     <label for="email" class="col-md-4 control-label">メールアドレス *非公開</label>

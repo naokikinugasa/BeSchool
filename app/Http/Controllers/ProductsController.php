@@ -67,8 +67,8 @@ class ProductsController extends Controller
 //        $image->save(public_path() . "/img/product/tmp/" . $thum_name);
 
         $thum_name = uniqid("THUM_") . "." . $req->file('thum')->guessExtension(); // TMPファイル名
-        $req->file('thum')->move(public_path() . "/img/product/tmp", $thum_name);
-        $thum = "/img/product/tmp/".$thum_name;
+        $req->file('thum')->move(public_path() . "/movie/product/tmp", $thum_name);
+        $thum = "/movie/product/tmp/".$thum_name;
 
 
 
@@ -95,12 +95,12 @@ class ProductsController extends Controller
         $lastInsertedId = $product->id;
 
         // ディレクトリを作成
-        if (!file_exists(public_path() . "/img/product/" . $lastInsertedId)) {
-            mkdir(public_path() . "/img/product/" . $lastInsertedId, 0777);
+        if (!file_exists(public_path() . "/movie/product/" . $lastInsertedId)) {
+            mkdir(public_path() . "/movie/product/" . $lastInsertedId, 0777);
         }
 
         // 一時保存から本番の格納場所へ移動
-        rename(public_path() . $req->thum, public_path() . "/img/product/" . $lastInsertedId . "/thum." .pathinfo($req->thum, PATHINFO_EXTENSION));
+        rename(public_path() . $req->thum, public_path() . "/movie/product/" . $lastInsertedId . "/thum." .pathinfo($req->thum, PATHINFO_EXTENSION));
 
 
 

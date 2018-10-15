@@ -5,8 +5,8 @@
             <div class="padding-top-2x mt-2 hidden-lg-up"></div>
             <p>名前：{{$user->name}}</p>
             <div class="user-avatar"><a class="edit-avatar" href="#"></a>
-                @if(isset($user->avatar))
-                <img src="{{$user->avatar}}" alt="User">
+                @if(null != $user->avatar()))<!-- TODO:多分ログインuserのavatarが表示されてしまう   -->
+                <img src="{{$user->avatar()}}" alt="User">
                 @else
                 <img src="/img/user_default.png" alt="User">
                 @endif
@@ -22,5 +22,7 @@
             <p>人生で一番やりきったこと：{{$user->worked}}</p>
             <p>将来のビジョン：{{$user->vision}}</p>
             <p>就職の有無：{{$user->finding}}</p>
+            <p>PR動画</p>
+            <video src="{{$user->pic_thum()}}" controls></video>
         </div>
 @endsection

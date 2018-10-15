@@ -3,38 +3,29 @@
 @section('title', 'マイホーム')
 
 @section('content')
-    <div class="container" style="background: #EEEEEE; border: solid white;">
-        <div id="mypage" style="margin-bottom: 100px;">
-            <h3 style="padding:3%;text-align: center;">マイページ</h3>
-            <ul>
-                {{--<div style="width:100px;height:100px;margin-left: auto;--}}
-	  {{--margin-right: auto;">--}}
-                    {{--<img src="images/@if (isset($user->gazou))--}}
-                        {{--{{$user->gazou}}--}}
-                    {{--@else--}}
-                        {{--echo "default.png";--}}
-                    {{--}?>" style="border-radius: 50px;--}}
-	  {{--height: 100px;--}}
-	  {{--width: 100%;" />--}}
-                {{--</div>--}}
-                <li>ニックネーム:{{$user->name}}</li>
-                <li>メールアドレス:{{$user->email}}</li>
-                <h3>出品している商品</h3>
-                @foreach ($user->products as $product)
-                <a href="template.php?id={{$product->id}}">
-                    <div class="topNaviColumn2">
-                        <div class="topNaviPhoto2"><img src="{{$product->pic_thum()}}" alt="" /></div>
-                        <p style="padding:0 5%;"class="topNaviDetail2">
-                            {{$product->title}}
-                        </p><br><p style="padding:0 5%;">{{$product->price}}</p>
-                    </div>
-                </a>
-                @endforeach
-            </ul>
-            <a class="myButtonlog2" href="exhit.php">出品する</a>
-
-
+    <div class="col-lg-8">
+        <p>名前：{{$user->name}}</p>
+        <div class="user-avatar"><a class="edit-avatar" href="#"></a>
+            @if(null != $user->avatar())<!-- TODO:多分ログインuserのavatarが表示されてしまう   -->
+            <img src="{{$user->avatar()}}" alt="User">
+            @else
+            <img src="/img/user_default.png" alt="User">
+            @endif
         </div>
-        <div style="clear: both;"></div>
+        <p>性別：{{$user->sex}}</p>
+        <p>生年月日：{{$user->birthday}}</p>
+        <p>出身地：{{$user->birthplace}}</p>
+        <p>在住地：{{$user->residence}}</p>
+        <p>学歴：{{$user->academicbackground}}</p>
+        <p>所属：{{$user->affliation}}</p>
+        <p>キャッチコピー：{{$user->catchphrase}}</p>
+        <p>人生で一番つらかったこと：{{$user->painful}}</p>
+        <p>人生で一番やりきったこと：{{$user->worked}}</p>
+        <p>将来のビジョン：{{$user->vision}}</p>
+        <p>就職の有無：{{$user->finding}}</p>
+        <p>PR動画</p>
+        <video src="/movie/user/{{$user->id}}/thum.mp4" controls></video>
+        <!-- TODO:mp4前提になっている -->
     </div>
+
 @endsection

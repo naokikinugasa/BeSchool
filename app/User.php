@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', "avatar", 'money', 'sex', 'birthday', 'birthplace', 'residence', 'academicbackground', 'affiliation', 'catchphrase', 'painful', 'worked', 'vision', 'finding'
+        'name', 'email', 'password', 'money', 'sex', 'birthday', 'birthplace', 'residence', 'academicbackground', 'affiliation', 'catchphrase', 'skill', 'painful', 'worked', 'vision', 'finding'
     ];
 
     /**
@@ -27,18 +27,23 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function products()
+
+    public function avatar()
     {
-        return $this->hasMany('App\Product');
-    }
+        $fnamebase = "/img/user/".$this->id."/thum.";
 
-    public function reservations()
-    {
-        return $this->hasMany('App\Reservation');
-    }
+        if(file_exists(public_path().$fnamebase."gif")){
+            return $fnamebase."gif";
+        }else if(file_exists(public_path().$fnamebase."png")){
+            return $fnamebase."png";
+        }else if(file_exists(public_path().$fnamebase."jpg")){
+            return $fnamebase."jpg";
+        }else if(file_exists(public_path().$fnamebase."jpeg")){
+            return $fnamebase."jpeg";
+        }else{
+            return "";
+        }
 
-
-    public function accounts(){
-        return $this->hasMany('App\LinkedSocialAccount');
+        return "";  
     }
 }

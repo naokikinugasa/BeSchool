@@ -5,13 +5,13 @@
             <div class="padding-top-2x mt-2 hidden-lg-up"></div>
             <p>名前：{{$user->name}}</p>
             <div class="user-avatar"><a class="edit-avatar" href="#"></a>
-                @if(isset($user->avatar))
-                <img src="{{$user->avatar}}" alt="User">
+                @if($user->avatar() != NULL)
+                <img src="{{$user->avatar()}}" alt="User">
                 @else
                 <img src="/img/user_default.png" alt="User">
                 @endif
             </div>
-            <form action="/company/edit" method="post">
+            <form action="/company/edit" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
 
 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -28,7 +28,31 @@
     </div>
 </div>
 
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label" for="file-input">会社画像</label>
+                        <div class="col-10">
+                            <div class="custom-file">
+                                <input class="custom-file-input" type="file" id="file-input" name="avatar">
+                                <label class="custom-file-label" for="file-input">画像を選択</label>
+                            </div>
+                        </div>
+                        @if($errors->has('avatar'))
+                            <p style="color: red;">EROOR {{$errors->first('avatar')}}</p>
+                        @endif
+                    </div>
 
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label" for="file-input">PR動画</label>
+                        <div class="col-10">
+                            <div class="custom-file">
+                                <input class="custom-file-input" type="file" id="file-input" name="thum">
+                                <label class="custom-file-label" for="file-input">動画を選択</label>
+                            </div>
+                        </div>
+                        @if($errors->has('thum'))
+                            <p style="color: red;">EROOR {{$errors->first('thum')}}</p>
+                        @endif
+                    </div>
 
 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
     <label for="email" class="col-md-4 control-label">メールアドレス *非公開</label>

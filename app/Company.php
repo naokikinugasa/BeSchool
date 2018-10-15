@@ -41,4 +41,23 @@ class Company extends Authenticatable
     public function accounts(){
         return $this->hasMany('App\LinkedSocialAccount');
     }
+
+    public function avatar()
+    {
+        $fnamebase = "/img/company/".$this->id."/thum.";
+
+        if(file_exists(public_path().$fnamebase."gif")){
+            return $fnamebase."gif";
+        }else if(file_exists(public_path().$fnamebase."png")){
+            return $fnamebase."png";
+        }else if(file_exists(public_path().$fnamebase."jpg")){
+            return $fnamebase."jpg";
+        }else if(file_exists(public_path().$fnamebase."jpeg")){
+            return $fnamebase."jpeg";
+        }else{
+            return "";
+        }
+
+        return "";  
+    }
 }

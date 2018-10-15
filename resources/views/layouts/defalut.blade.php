@@ -75,9 +75,7 @@
 <!-- Off-Canvas Mobile Menu-->
 <div class="offcanvas-container" id="mobile-menu"><a class="account-link" href="/users">
         @if(isset($user))
-            @if(isset($user->avatar))
-                <img src="{{$user->avatar}}" alt="">
-            @endif
+            <!-- TODO:アバター画像エラーだったから消した。戻す?もう一箇所。-->
             <div class="user-info">
                 <h6 class="user-name">{{$user->name}}</h6>
                 {{--<span class="text-sm text-white opacity-60">290 Reward points</span>--}}
@@ -152,13 +150,6 @@
                     <div class="account"><a href="/users"></a><i class="icon-head"></i>
                     <ul class="toolbar-dropdown">
                         <li class="sub-menu-user">
-                            <div class="user-ava">
-                            @if(isset($user->avatar))
-                                <img src="{{$user->avatar}}" alt="User">
-                            @else
-                                <img src="/img/user_default.png" alt="User">
-                            @endif
-                            </div>
                             <div class="user-info">
                                 <h6 class="user-name">{{$user->name}}</h6>
                             </div>

@@ -32,7 +32,8 @@ Route::get('/products/category/{id}', 'ProductsController@category');
 
 Auth::routes();
 
-Route::get('/users/', 'UsersController@index')->middleware('auth');
+Route::get('/mypage/', 'UsersController@index')->middleware('auth');
+Route::get('/users/', 'UsersController@list');
 Route::get('/users/{id}', 'UsersController@show');
 Route::get('/edit', 'UsersController@edit')->middleware('auth');
 Route::post('/edit', 'UsersController@update')->middleware('auth');

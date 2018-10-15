@@ -11,7 +11,7 @@
                 <div class="user-info">
                     <div class="user-avatar"><a class="edit-avatar" href="#"></a>
                         @if(isset($company->avatar))
-                        <img src="{{$user->avatar}}" alt="User">
+                        <img src="{{$company->avatar}}" alt="User">
                         @else
                         <img src="/img/user_default.png" alt="User">
                         @endif
@@ -23,6 +23,8 @@
                         <h4>面談可能スケジュール：{{$company->schedule}}</h4>
                         <span>{{$company->created_at}}</span>
                         {{--TODO:タイムスタンプ、時間削除--}}
+                        <h4>PR動画</h4>
+                        <video src="{{$company->pic_thum()}}"></video>
                     </div>
                 </div>
             </aside>
