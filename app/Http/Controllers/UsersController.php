@@ -70,7 +70,7 @@ class UsersController extends Controller
         //     $query->where('title', 'like', '%' . $keyword . '%');
         // }
         //TODO:画像動画ファイル構成変更
-        $users = $query->paginate(16);
+        $users = $query->paginate(1);
 
         return view('users.list', ['users' => $users, 'user' => $user, 'keyword' => $keyword]);
     }

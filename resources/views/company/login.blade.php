@@ -1,4 +1,4 @@
-@extends('layouts.app_company')
+@extends('layouts.app')
 
 @section('content')
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-social.css">
@@ -6,14 +6,13 @@
 
     <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">ログイン</div>
                 <div class="panel-body panel-body-login">
-                        <h4 style="text-align: center;">アカウントをお持ちでない方はこちら</h4>
-                        <a href="/register" class="btn btn-primary" style="width: 100%">新規会員登録</a>
-                        <hr>
-                    <h4 style="text-align: center;">メールアドレスでログイン</h4>
+                        <!-- <h4 style="text-align: center;">アカウントをお持ちでない方はこちら</h4> -->
+                        <!-- <a href="/register" class="btn btn-primary" style="width: 100%">新規会員登録</a> -->
+                        <!-- <hr> -->
+                    <h4 style="text-align: center;">企業ログイン</h4>
                     <form class="form-horizontal" method="POST" action="{{ route('company.login') }}">
                         {{ csrf_field() }}
 
@@ -46,8 +45,8 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
+                            <div class="col-md-6 col-md-offset-3">
+                                <div class="checkbox remember">
                                     <label>
                                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
                                     </label>
@@ -56,8 +55,8 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div>
+                                <button type="submit" class="btn btn-primary login_btn">
                                     ログイン
                                 </button>
 
@@ -69,7 +68,7 @@
 
                     </form>
 
-                    <!-- <h4 style="text-align: center;">学生の方は<a href="{{ route('login') }}">こちら</a></h4> -->
+                    <h5 style="text-align: center;">学生の方は<a href="{{ route('login') }}">こちら</a></h5>
 
                 </div>
             </div>

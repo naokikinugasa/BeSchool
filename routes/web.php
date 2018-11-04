@@ -57,6 +57,7 @@ Route::get('/transfer', 'TransferController@form');
 Route::post('/transfer/confirm', 'TransferController@confirm');
 Route::post('/transfer/process', 'TransferController@process');
 
+Route::get('/logout', 'Auth\LoginController@logout');
 
 
 

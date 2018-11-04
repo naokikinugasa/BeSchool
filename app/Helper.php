@@ -15,9 +15,9 @@ class Helper
         // 処理
         switch ($id) {
             case 1:
-                return "マインド";
+                return "MIND";
             case 2:
-                return "スキル";
+                return "SKILL";
         }
     }
 

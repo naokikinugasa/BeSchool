@@ -26,7 +26,7 @@ class ProductsController extends Controller
             $query->where('title', 'like', '%' . $keyword . '%');
         }
 
-        $products = $query->paginate(16);
+        $products = $query->simplePaginate(16);
 
         return view('products.index', ['products' => $products, 'user' => $user, 'keyword' => $keyword]);
     }
@@ -68,7 +68,7 @@ class ProductsController extends Controller
 
         $thum_name = uniqid("THUM_") . "." . $req->file('thum')->guessExtension(); // TMPファイル名
         $req->file('thum')->move(public_path() . "/movie/product/tmp", $thum_name);
-        $thum = "/movie/product/tmp/".$thum_name;
+        $thum = "movie/product/tmp/".$thum_name;
 
 
 
@@ -104,8 +104,8 @@ class ProductsController extends Controller
 
 
 
-        $bunsyo = '出品';
-        $bunsyo2 = '倉庫に商品を置きに行きましょう！';
+        $bunsyo = '投稿';
+        $bunsyo2 = '動画一覧ページで確認してみてください';
         return view('thanksRent', compact('user', 'bunsyo', 'bunsyo2'));
     }
 

@@ -2,30 +2,64 @@
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BeSchool</title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <!-- Mobile Specific Meta Tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Favicon and Apple Icons-->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="touch-icon-ipad-retina.png">
+    <!-- Vendor Styles including: Bootstrap, Font Icons, Plugins, etc.-->
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/vendor.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/extend.css">
+    <!-- Main Template Styles-->
+    <link id="mainStyles" rel="stylesheet" type="text/css" media="screen" href="/css/styles.min.css">
+    <!-- Modernizr-->
+    <script src="/js/modernizr.min.js"></script>
+    <script src="/js/jquery-3.3.1.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/redmond/jquery-ui.css" >
+    <script>
+        // $関数の割り当てを初期化
+        jQuery.noConflict();
+        // 改めて変数を割り当てる
+        var $j = jQuery;
+        $j(function() {
+            $j(".datepicker").datepicker();
+        });
+    </script>
+    <link rel="stylesheet" type="text/css" href="/css/pagination.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/css/cal.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+    <!-- <link href="{{ asset('css/extend_app.css') }}" rel="stylesheet"> -->
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <style>body{background-color: tomato;}</style>
-    <link href="{{ asset('css/extend_app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css') }}">
 
 
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-67426158-5"></script>
-    <script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-67426158-5"></script> -->
+<!--     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
         gtag('config', 'UA-67426158-5');
-    </script>
+    </script> -->
+
+    <meta property="og:title" content="" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="" />
 
 </head>
 <body>
@@ -43,10 +77,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="/img/share.png" style="width: 35%; height: 100%;">
-                        config('app.name', 'Laravel') }}
-                    </a>
+                    <a href="{{ url('/') }}"><img src="{{ asset('img/beschool_logo.png') }}" height="50px"></a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -62,25 +93,15 @@
                             <li><a href="{{ route('company.login') }}">ログイン</a></li>
                             <li><a href="{{ route('company.register') }}">新規会員登録</a></li>
                         @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('company.logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('company.logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
+                            <!-- <li><a href="{{ url('/') }}">Home</a></li> -->
+                            <li><a href="{{ action('ProductsController@store') }}">Movie</a></li>
+                            @if (isset($user))
+                            <li><a href="{{ action('UsersController@index') }}">My Page</a></li>
+                            @endif
+                            @if (isset($company))
+                            <li><a href="{{ action('Company\HomeController@index') }}">My Page</a></li>
+                            @endif
+                            <li><a href="{{ action('Auth\LoginController@logout') }}">Logout</a></li>
                         @endguest
                     </ul>
                 </div>
