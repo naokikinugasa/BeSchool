@@ -5,7 +5,6 @@
 @section('title', '動画一覧')
 
 @section('content')
-
     <!-- Page Content-->
 
     <div class="container padding-bottom-3x mb-1">

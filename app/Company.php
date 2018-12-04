@@ -60,4 +60,23 @@ class Company extends Authenticatable
 
         return "";  
     }
+
+    public function pic_thum()
+    {
+        $fnamebase = "/movie/company/".$this->id."/thum.";
+
+        if(file_exists(public_path().$fnamebase."gif")){
+            return $fnamebase."gif";
+        }else if(file_exists(public_path().$fnamebase."png")){
+            return $fnamebase."png";
+        }else if(file_exists(public_path().$fnamebase."jpg")){
+            return $fnamebase."jpg";
+        }else if(file_exists(public_path().$fnamebase."jpeg")){
+            return $fnamebase."jpeg";
+        }else if(file_exists(public_path().$fnamebase."mp4")){
+            return $fnamebase."mp4";
+        }else{
+            return "";
+        }
+    }
 }

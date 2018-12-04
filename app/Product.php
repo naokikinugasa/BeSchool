@@ -15,6 +15,11 @@ class Product extends Model
         return $this->belongsTo('App\Company');
     }
 
+    public function getOwnerId()
+    {
+        return $this->user->id;
+    }
+
     public function getOwnerName()
     {
         return $this->user->name;

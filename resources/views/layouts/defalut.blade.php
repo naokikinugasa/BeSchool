@@ -74,12 +74,14 @@
 
 <!-- Off-Canvas Mobile Menu-->
 <div class="offcanvas-container" id="mobile-menu"><a class="account-link" href="/users">
+        @if(\Illuminate\Support\Facades\Auth::guard('company')->check() or \Illuminate\Support\Facades\Auth::guard('user')->check())
         @if(isset($user))
             <!-- TODO:アバター画像エラーだったから消した。戻す?もう一箇所。-->
             <div class="user-info">
                 <h6 class="user-name">{{$user->name}}</h6>
                 {{--<span class="text-sm text-white opacity-60">290 Reward points</span>--}}
             </div></a>
+        @endif
         @endif
 
     <nav class="offcanvas-menu">
@@ -146,7 +148,7 @@
     <div class="toolbar">
         <div class="inner">
             <div class="tools">
-                @if(\Illuminate\Support\Facades\Auth::check())
+                @if(\Illuminate\Support\Facades\Auth::guard('company')->check() or \Illuminate\Support\Facades\Auth::guard('user')->check())
                     <div class="account"><a href="/users"></a><i class="icon-head"></i>
                     <ul class="toolbar-dropdown">
                         <li class="sub-menu-user">
@@ -154,10 +156,15 @@
                                 <h6 class="user-name">{{$user->name}}</h6>
                             </div>
                         </li>
-                        <li><a href="/users/">マイページ</a></li>
-                        <li><a href="/users/money">売上金</a></li>
-                        <li><a href="/users/renting">レンタル中の商品</a></li>
-                        <li><a href="/users/listing">出品中の商品</a></li>
+                        <li>
+                        @if(\Illuminate\Support\Facades\Auth::guard('user')->check())
+                            <a href="/mypage/">
+                        @elseif(\Illuminate\Support\Facades\Auth::guard('company')->check())
+                            <a href="/company/home">
+                        @endif
+                            マイページ
+                            </a>
+                        </li>
                         {{--<li><a href="account-wishlist.html">いいね！一覧</a></li>--}}
                         <li class="sub-menu-separator"></li>
                         <li><a href="/logout" onclick="event.preventDefault();

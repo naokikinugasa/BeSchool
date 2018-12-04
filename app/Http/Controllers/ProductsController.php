@@ -17,7 +17,7 @@ class ProductsController extends Controller
 
     public function index(Request $request)
     {
-        $user = Auth::user();
+        $user = Auth::guard('company')->user()??Auth::guard('user')->user()??false;
 
         $keyword = $request->input('site_search');
         #クエリ生成
@@ -25,7 +25,7 @@ class ProductsController extends Controller
         if (!empty($keyword)) {
             $query->where('title', 'like', '%' . $keyword . '%');
         }
-
+    
         $products = $query->paginate(16);
 
         return view('products.index', ['products' => $products, 'user' => $user, 'keyword' => $keyword]);
@@ -113,7 +113,7 @@ class ProductsController extends Controller
     {
         $product = Product::findOrFail($id);
         $product->delete();
-        return redirect('/users/listing');
+        return redirect('/products');
     }
 
     public function edit(Request $request)

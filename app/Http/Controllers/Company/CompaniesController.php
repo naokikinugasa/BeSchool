@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers\Company;
 
+use App\Company;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\UploaderRequest;
+use App\Product;
 
 class CompaniesController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth:company');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth:company');
+    // }
     
     public function edit()
     {
@@ -46,5 +48,14 @@ class CompaniesController extends Controller
         $form = $request->all();
         $company->fill($form)->save();
         return view("company.home", ['company' => $company]);
+    }
+
+    public function show(Request $request, $id)
+    {
+
+        $user = Auth::user();
+        $company = Company::findOrFail($id);
+
+        return view('company.show', ['company' => $company, 'user' => $user]);
     }
 }

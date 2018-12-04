@@ -105,6 +105,12 @@ border-radius: 50%;">
 </div>
 </form>
 
+    <form action="/products/delete/{{ $product->id }}" method='post'>
+        {{ csrf_field() }}
+            <input type='hidden' name='id' value='{{ $product->id }}'>
+            <input type='submit' value='削除'>
+    </form>
+
     </div>
     </div>
 

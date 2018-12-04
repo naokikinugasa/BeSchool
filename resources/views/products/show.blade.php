@@ -24,8 +24,7 @@
 
                 <button class="btn btn-owner" style="margin-right: 0px; padding: 0px 0px;">
                     <div class="owner-ava">
-                        <a href="/">
-                            {{--TODO:userページにリンク--}}
+                        <a href="/company/{{$product->getOwnerId()}}">
                             @if($product->getOwnerAvatar() !== null)
                             <img src="{{$product->getOwnerAvatar()}}" style="display: block;
     width: 44px;
@@ -42,7 +41,7 @@ border-radius: 50%;">
                         </a>
                     </div>
                 </button>
-                <span>{{$product->getOwnerName()}}</span>
+                <span><a href="/company/{{$product->getOwnerId()}}">{{$product->getOwnerName()}}</a></span>
 
                 
 

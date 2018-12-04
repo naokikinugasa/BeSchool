@@ -10,19 +10,19 @@ class TopController extends Controller
     //
     public function index()
     {
-        $user = Auth::user();
+        $user = Auth::guard('company')->user()??Auth::guard('user')->user()??false;
         return view('home', compact("user"));
     }
 
-    public function howto()
-    {
-        $user = Auth::user();
-        return view('howto', compact("user"));
-    }
+    // public function howto()
+    // {
+    //     $user = Auth::user();
+    //     return view('howto', compact("user"));
+    // }
 
-    public function terms()
-    {
-        $user = Auth::user();
-        return view('terms', compact("user"));
-    }
+    // public function terms()
+    // {
+    //     $user = Auth::user();
+    //     return view('terms', compact("user"));
+    // }
 }

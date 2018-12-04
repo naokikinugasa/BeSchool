@@ -225,7 +225,7 @@
     <label for="worked" class="col-md-4 control-label">人生でやりきったこと</label>
 
     <div class="col-md-6">
-        <input id="email" type="text" class="form-control" name="worked" value="{{ $user->worked }}" maxlength='200'>
+        <input id="email" type="textarea" class="form-control" name="worked" value="{{ $user->worked }}" maxlength='200'>
 
         @if ($errors->has('worked'))
             <span class="help-block">
